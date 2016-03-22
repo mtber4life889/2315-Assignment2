@@ -29,6 +29,21 @@ public class PMain {
 				varBag.add(newVar);
 				System.out.println(newVar.getName() + " = " + newVar.getValue()+ "\n");
 			}
+			else
+			{
+				String[] parts = userInput.split(" ");
+				int[] intParts = new int[parts.length];
+				
+				for(int i = 0; i < parts.length; i++)
+				{
+					intParts[i] = Integer.parseInt(parts[i]);
+				}
+				
+				String output;
+				PostToInfix theTrans = new PostToInfix(userInput);
+				output = theTrans.doTrans();
+				System.out.println("postfix: " + output);
+			}
 			
 		}
 		
