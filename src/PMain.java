@@ -31,13 +31,14 @@ public class PMain {
 			}
 			else
 			{
-				String[] parts = userInput.split(" ");
+				
+				/*String[] parts = userInput.split(" ");
 				int[] intParts = new int[parts.length];
 				
 				for(int i = 0; i < parts.length; i++)
 				{
 					intParts[i] = Integer.parseInt(parts[i]);
-				}
+				}*/
 				
 				String output;
 				PostToInfix theTrans = new PostToInfix(userInput);
