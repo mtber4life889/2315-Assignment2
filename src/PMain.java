@@ -1,3 +1,9 @@
+/* Programmer: Curtis Chippeway
+ * The purpose of this class is to run the Main program.
+ * The sources used were the class notes from Kenward Chin and 
+ * http://www.tutorialspoint.com/java/java_string_split.htm
+ * http://stackoverflow.com/questions/11171445/how-matcher-find-works
+ */
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -5,12 +11,12 @@ public class PMain {
 
 	public static void main(String[] args) {
 		
-		String userInput = null;
+		String userInput = "";
 		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		BagInterface<Variable> varBag = new ArrayBag<>();
 		
-		while (userInput != "quit")
+		while (!userInput.equals("quit"))
 		{
 			System.out.println("Please either enter an infix expression to be evaluated");
 			System.out.println("or define a variable to be used with the format of:  define  variable name  integer value");
@@ -30,42 +36,15 @@ public class PMain {
 				System.out.println(newVar.getName() + " = " + newVar.getValue()+ "\n");
 			}
 			else
-			{
-				
-				/*String[] parts = userInput.split(" ");
-				int[] intParts = new int[parts.length];
-				
-				for(int i = 0; i < parts.length; i++)
-				{
-					intParts[i] = Integer.parseInt(parts[i]);
-				}*/
-				
+			{			
 				String output;
 				PostToInfix theTrans = new PostToInfix(userInput);
 				output = theTrans.doTrans();
-				System.out.println("postfix: " + output);
+				System.out.println("In postfix notation this is: " + output + "\n");
 			}
 			
 		}
 		
 
 	}
-	/*private static String menu()
-	{
-		String selection;
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("Please either enter an infix expression to be evaluated ");
-		System.out.println("or define a variable to be used with the format of:  define  variable name  integer value");
-		System.out.println("2) Remove a Baseball Card and duplicates if specified." + "\n");
-        System.out.println("3) Find the total value of a Baseball card including duplicates." + "\n");
-		System.out.println("4) Change the price of a Baseball Card." + "\n");
-	    System.out.println("5) Find all cards in the bag and how many duplicates you have." + "\n");
-		System.out.println("Please Input the number for the option you wish to use: ");
-		   
-		selection = input.nextLine();
-		return selection;
-	}*/
-
 }

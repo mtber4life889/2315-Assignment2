@@ -1,4 +1,6 @@
-
+/* Programmer: Curtis Chippeway
+ * The purpose of this class is to be used to create user variables.
+ */
 public class Variable {
 	String Name;
 	int Value;
